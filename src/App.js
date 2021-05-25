@@ -9,21 +9,26 @@ import './App.css';
 
 import Users from './users/pages/Users';
 import NewPlaces from './places/pages/NewPlaces';
+import MainNavigation from './shared/components/Navigation/MainNavigation';
 
 const App = () => {
 	return (
 		<Router>
-			<Switch>
-				<Route path='/' exact>
-					<Users />
-				</Route>
+			<MainNavigation />
 
-				<Route path='/places/new' exact>
-					<NewPlaces />
-				</Route>
+			<main>
+				<Switch>
+					<Route path='/' exact>
+						<Users />
+					</Route>
 
-				<Redirect to='/' />
-			</Switch>
+					<Route path='/places/new' exact>
+						<NewPlaces />
+					</Route>
+
+					<Redirect to='/' />
+				</Switch>
+			</main>
 		</Router>
 	);
 };

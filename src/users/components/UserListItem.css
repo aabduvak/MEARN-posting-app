@@ -18,7 +18,6 @@
 .user-item a:hover,
 .user-item a:active {
 	background: #ffd900;
-	transition: all 600ms;
 }
 
 .user-item.card.user-item__content {
