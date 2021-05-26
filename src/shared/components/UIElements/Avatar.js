@@ -2,16 +2,12 @@ import React from 'react';
 
 import './Avatar.css';
 
-const Avatar = props => {
-  return (
-    <div className={`avatar ${props.className}`} style={props.style}>
-      <img
-        src={props.image}
-        alt={props.alt}
-        style={{ width: props.width, height: props.width }}
-      />
-    </div>
-  );
+const Avatar = ({ className, image, alt, width, height, style }) => {
+	return (
+		<div className={`avatar ${className}`} style={style}>
+			<img src={image} alt={alt} style={{ width: width, height: height }} />
+		</div>
+	);
 };
 
 export default Avatar;
