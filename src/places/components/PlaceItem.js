@@ -6,7 +6,8 @@ import Modal from '../../shared/components/UIElements/Modal';
 import Map from '../../shared/components/UIElements/Map';
 import './PlaceItem.css';
 
-const PlaceItem = ({ image, title, address, description, id, coordinates }) => {
+const PlaceItem = (props) => {
+	const { image, title, address, description, id, coordinates } = props;
 	const [showMap, setShowMap] = useState(false);
 
 	const openMapHandler = () => setShowMap(true);
@@ -42,7 +43,7 @@ const PlaceItem = ({ image, title, address, description, id, coordinates }) => {
 						<Button inverse onClick={openMapHandler}>
 							VIEW ON MAP
 						</Button>
-						<Button to={`places/${id}`}>EDIT</Button>
+						<Button to={`/places/${id}`}>EDIT</Button>
 						<Button danger>DELETE</Button>
 					</div>
 				</Card>
