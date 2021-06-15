@@ -33,19 +33,21 @@ const UpdatePlaces = () => {
 	const identifiedPlace = DUMMY_PLACES.find((place) => place.id === placeId);
 
 	useEffect(() => {
-		setFormData(
-			{
-				title: {
-					value: identifiedPlace.title,
-					isValid: true,
+		if (identifiedPlace) {
+			setFormData(
+				{
+					title: {
+						value: identifiedPlace.title,
+						isValid: true,
+					},
+					description: {
+						value: identifiedPlace.description,
+						isValid: true,
+					},
 				},
-				description: {
-					value: identifiedPlace.description,
-					isValid: true,
-				},
-			},
-			true
-		);
+				true
+			);
+		}
 		setIsLoading(false);
 	}, [setFormData, identifiedPlace]);
 
@@ -58,7 +60,8 @@ const UpdatePlaces = () => {
 		return (
 			<div className='center'>
 				<Card>
-					<h2>No place found.</h2>
+					<h2>Could not find the place. May be create one?</h2>
+					<Button to='/places/new'>Share Place</Button>
 				</Card>
 			</div>
 		);
